@@ -1,0 +1,47 @@
+/* // ...existing code... */
+.tryon-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+}
+.tryon-modal-content {
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 900px;
+}
+.tryon-stage {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio container */
+  background: #000;
+  overflow: hidden;
+}
+.tryon-stage video {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 100%;
+  max-width: none;
+}
+.tryon-overlay-img {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  max-width: 80%;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+.tryon-close {
+  position: absolute;
+  right: 8px; top: 8px;
+}

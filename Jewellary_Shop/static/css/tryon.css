@@ -1,0 +1,101 @@
+/* Virtual Try-on Modal Styles */
+.modal.tryon-modal {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.tryon-container {
+  position: relative;
+  background: #000;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Video Element */
+#tryonVideo {
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1); /* Mirror the video */
+  background: #111;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+/* Overlay Image */
+#tryonOverlayImg {
+  position: absolute;
+  pointer-events: none;
+  transform-origin: center center;
+  z-index: 1000;
+  max-width: 100%;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+#tryonOverlayImg.loading {
+  opacity: 0;
+}
+
+/* Modal Styling */
+.modal-content.bg-dark {
+  background-color: #000 !important;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: 0.8;
+  padding: 1rem;
+  margin: -1rem;
+  transition: opacity 0.2s ease;
+}
+
+.modal-header .close:hover {
+  opacity: 1;
+}
+
+/* Error Message */
+#tryonError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1001;
+  max-width: 80%;
+}
+
+/* Loading Indicator */
+.tryon-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 999;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tryon-container {
+    min-height: 300px;
+  }
+  
+  #tryonVideo {
+    min-height: 300px;
+  }
+  
+  .modal-header {
+    padding: 0.75rem 1rem;
+  }
+}
